@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Logs</title>
+</head>
+<body>
+    <h1>Letzte 5 Klassifikationen</h1>
+    <ul>
+        {% for log in logs %}
+            <li>
+                <strong>{{ log["timestamp"] }}</strong>: {{ log["filename"] }} → <em>{{ log["prediction"] }}</em> ({{ log["confidence"]|round(2) }})
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Zurück</a>
+</body>
+</html>

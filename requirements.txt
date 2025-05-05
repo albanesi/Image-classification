@@ -1,0 +1,6 @@
+## requirements.txt
+flask
+onnxruntime
+numpy
+opencv-python
+pymongo

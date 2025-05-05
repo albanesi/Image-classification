@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: image-classifier
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./web/uploads:/usr/src/app/web/uploads
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
